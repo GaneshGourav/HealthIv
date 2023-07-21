@@ -6,6 +6,7 @@ const Footer = () => {
       <Box
         bg="black"
         p={8}
+        height='400px'
         color="white"
         display="flex"
         justifyContent={{
