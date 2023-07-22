@@ -5,6 +5,7 @@ import { Contact } from "../Pages/contact";
 import { Aboutus } from "../Pages/Aboutus";
 import { Home } from "../Pages/Home";
 import { SingleProducts } from "../Pages/singleproducts";
+import { Cart } from "../Pages/cart";
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,8 @@ const AllRoutes = () => {
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/products/:id" element={<SingleProducts/>}/>
+        <Route path="/cart" element={<Cart/>} />
+        
       </Routes>
     </>
   );
