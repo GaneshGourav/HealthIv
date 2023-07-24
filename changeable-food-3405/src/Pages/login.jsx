@@ -63,7 +63,7 @@ export const Signin = () => {
         isClosable: true,
       });
       login();
-      navigate(`/treatment`);
+      navigate(`/`);
     } else {
       toast({
         title: "Login Failed.",

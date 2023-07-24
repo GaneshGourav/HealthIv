@@ -55,7 +55,7 @@ const Header = () => {
           <Button
             colorScheme="teal"
             fontFamily=" sans-serif"
-            onClick={() => navigate(`/treatment#treatment-menu`)}
+            onClick={() => navigate(`/`)}
           >
             Book Session
           </Button>

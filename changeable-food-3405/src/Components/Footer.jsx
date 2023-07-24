@@ -1,6 +1,17 @@
 import { Box, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate()
+  const handletreatment = () =>{
+navigate(`/`)
+  }
+  const handleBlog = () =>{
+    navigate(`/blog`)
+      }
+      const handleAbout = () =>{
+        navigate(`/aboutus`)
+          }
   return (
     <>
       <Box
@@ -19,9 +30,9 @@ const Footer = () => {
         <Box >HEALTHIV</Box>
         <Box textAlign="left">
           <Text fontFamily="Open Sans sans-serif">MENU</Text> <br />
-          <Text>Treatment</Text><br />
-          <Text>Blogs</Text><br />
-          <Text>About Us</Text><br />
+          <Text onClick={handletreatment}>Treatment</Text><br />
+          <Text onClick={handleBlog}>Blogs</Text><br />
+          <Text onClick={handleAbout}>About Us</Text><br />
         </Box>{" "}
         <br />
         <Box textAlign="left">

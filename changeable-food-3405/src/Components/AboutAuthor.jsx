@@ -13,15 +13,15 @@ export const Author=()=> {
         fontSize={{ base: 'xl', md: '2xl' }}
         textAlign={'center'}
         maxW={'3xl'}  fontFamily="Sofia, sans-serif">
-        We had an incredible experience working with Chakra Templates and were
-        impressed they made such a big difference in only three weeks. Our team
-        is so grateful for the wonderful improvements they made and their
+        I had an incredible experience working with Recat FrameWork and  Chakra Templates and were
+        impressed i made such a big difference in only 6 Months. Our Masai School
+        is so grateful for the wonderful improvements they made and my
         ability to get familiar with the product concept so quickly.
       </Text>
       <Box textAlign={'center'}>
         <Avatar
           src={
-            'https://drive.google.com/file/d/152zx61xZPagai2XTWCqj2zBkj-mFUZtn/view?usp=drive_link'
+            'https://www.canva.com/design/DAFpiZ54mm8/aCqIflXx68w1LAF5az7HQw/edit?utm_content=DAFpiZ54mm8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'
           }
           alt={'Jenny Wilson'}
           mb={2}
