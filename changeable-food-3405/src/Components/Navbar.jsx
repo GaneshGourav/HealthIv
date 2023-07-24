@@ -1,6 +1,6 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { Box, Button } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   Drawer,
   DrawerBody,
@@ -8,7 +8,7 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Text,
+  Text,Heading
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
@@ -17,12 +17,15 @@ import { Treatement } from "../Pages/Treatment";
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuth, userdata, logout } = useContext(AuthContext);
+  const navigate = useNavigate()
   const handleLogout = () => {
     logout();
   };
-
+const handleHome=()=>{
+navigate(`/`)
+}
   const links = [
-    { to: "/treatment", title: "Treatement" },
+    { to: "/", title: "Treatement" },
     { to: "/blog", title: "Blog" },
     { to: "/aboutus", title: "AboutUS" },
     { to: "/contact", title: "Contact" },
@@ -40,7 +43,7 @@ const Navbar = () => {
         justifyContent="space-between"
       >
         {/* Navbar */}
-        <Box fontFamily="Open Sans sans-serif">HEALTHIV</Box>
+        <Box fontFamily="Open Sans sans-serif"> <Heading size='md' onClick={handleHome}>HEALTHIV</Heading> </Box>
         <Box
           display={{ lg: "flex", md: "flex", sm: "none", base: "none" }}
           // border="1px solid red"

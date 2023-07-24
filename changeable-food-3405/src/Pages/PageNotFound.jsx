@@ -5,7 +5,7 @@ export const PageNotFound=()=> {
 
   const navigate = useNavigate()
   const handlePagenotFound =()=>{
-navigate(`/treatment`)
+navigate(`/`)
   }
   return (
     <Box textAlign="center" py={10} px={6}>
@@ -27,7 +27,6 @@ navigate(`/treatment`)
       <Button
       onClick={handlePagenotFound}
         colorScheme="teal"
-        bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
         color="white"
         variant="solid">
         Go to Home
