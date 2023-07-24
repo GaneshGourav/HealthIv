@@ -14,19 +14,20 @@ const Footer = () => {
           lg: "space-around",
           md: "space-around",
         }}
+        fontFamily="Open Sans sans-serif"
       >
-        <Box>HEALTHIV</Box>
+        <Box >HEALTHIV</Box>
         <Box textAlign="left">
-          <Text>MENU</Text> <br />
-          <Text>Treatment</Text>
-          <Text>Blogs</Text>
-          <Text>About Us</Text>
+          <Text fontFamily="Open Sans sans-serif">MENU</Text> <br />
+          <Text>Treatment</Text><br />
+          <Text>Blogs</Text><br />
+          <Text>About Us</Text><br />
         </Box>{" "}
         <br />
         <Box textAlign="left">
-          <Text>Contact</Text>
-          <Text>Phone No: 9572016410</Text>
-          <Text>Writes us @customerSupport@HealthIv </Text>
+          <Text fontFamily="Open Sans sans-serif">CONTACT</Text> <br />
+          <Text>Phone No: 9572016410</Text><br />
+          <Text>Writes us @customerSupport@HealthIv </Text><br />
         </Box>
       </Box>
 
@@ -37,9 +38,9 @@ const Footer = () => {
         justifyContent="space-around"
         color="white"
       >
-        <text>HealthIv 2023. All Right are Reserved.</text>
-        <Text>
-          Created By: <span>Ganesh Kumar</span>
+        <Text fontFamily="Sofia, sans-serif">HealthIv 2023. All Right are Reserved.</Text>
+        <Text fontFamily="Sofia, sans-serif">
+          Created By: <span >Ganesh Kumar</span>
         </Text>
       </Box>
     </>

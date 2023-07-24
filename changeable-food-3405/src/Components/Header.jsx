@@ -8,8 +8,10 @@ import {
   ButtonGroup,
   Center,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Box
@@ -50,7 +52,11 @@ const Header = () => {
           <Button colorScheme="teal" fontFamily=" sans-serif">
             Become a Memeber
           </Button>
-          <Button colorScheme="teal" fontFamily=" sans-serif">
+          <Button
+            colorScheme="teal"
+            fontFamily=" sans-serif"
+            onClick={() => navigate(`/treatment#treatment-menu`)}
+          >
             Book Session
           </Button>
         </Box>
