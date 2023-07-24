@@ -8,48 +8,89 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Text,
 } from "@chakra-ui/react";
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext";
+import { Treatement } from "../Pages/Treatment";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isAuth, userdata, logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout();
+  };
 
   const links = [
     { to: "/treatment", title: "Treatement" },
     { to: "/blog", title: "Blog" },
     { to: "/aboutus", title: "AboutUS" },
     { to: "/contact", title: "Contact" },
+    { to: "/cart", title: "Cart" },
   ];
 
   return (
     <>
       <Box
-        bg="black"
+        bg="blackAlpha.500"
+        filter="transparent"
         p={5}
-        color="white"
+        color="black"
         display="flex"
         justifyContent="space-between"
       >
         {/* Navbar */}
-        <Box>HEALTHIV</Box>
+        <Box fontFamily="Open Sans sans-serif">HEALTHIV</Box>
         <Box
           display={{ lg: "flex", md: "flex", sm: "none", base: "none" }}
-          border="1px solid red"
+          // border="1px solid red"
           justifyContent="space-around"
           width="500px"
         >
           {links.map((item) => (
-            <NavLink key={item.to} to={item.to}>
+            <NavLink
+              key={item.to}
+              to={item.to}
+              fontFamily="Open Sans sans-serif"
+              style={({ isActive, isPending }) => {
+                return {
+                  fontWeight: isActive ? "bold" : "",
+                  color: isPending ? "red" : "black",
+                };
+              }}
+            >
               {item.title}
             </NavLink>
           ))}
+          {isAuth && (
+            <Text fontFamily="Open Sans sans-serif">{userdata.name}</Text>
+          )}
+
+          {isAuth ? (
+            <Text fontFamily="Open Sans sans-serif" onClick={handleLogout}>
+              Logout
+            </Text>
+          ) : (
+            <NavLink
+              to="/signin"
+              style={({ isActive, isPending }) => {
+                return {
+                  fontWeight: isActive ? "bold" : "",
+                  color: isPending ? "red" : "black",
+                };
+              }}
+            >
+              Signin
+            </NavLink>
+          )}
         </Box>
 
         {/* Draewer */}
         <Box display={{ lg: "none", md: "none", sm: "flex", base: "flex" }}>
-          <Button bg="black" color="white" onClick={onOpen}>
+          <Button bg="blackAlpha.500" color="white" onClick={onOpen}>
             {<HamburgerIcon />}
           </Button>
-          <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
+          <Drawer isOpen={isOpen} placement="Right" onClose={onClose}>
             <DrawerOverlay />
             <DrawerContent>
               <DrawerCloseButton />
@@ -57,10 +98,48 @@ const Navbar = () => {
                 <Box display="flex" flexDirection="column">
                   {" "}
                   {links.map((item) => (
-                    <NavLink key={item.to} to={item.to}>
+                    <NavLink
+                      key={item.to}
+                      to={item.to}
+                      fontFamily="Open Sans sans-serif"
+                      style={({ isActive, isPending }) => {
+                        return {
+                          fontWeight: isActive ? "bold" : "",
+                          color: isPending ? "red" : "black",
+                        };
+                      }}
+                    >
                       {item.title}
                     </NavLink>
                   ))}
+                  {isAuth && (
+                    <Text fontFamily="Open Sans sans-serif" color="red">
+                      {userdata.name}
+                    </Text>
+                  )}
+                  {isAuth ? (
+                    <Text
+                      fontFamily="Open Sans sans-serif"
+                      border="1px solid blue"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </Text>
+                  ) : (
+                    <NavLink
+                      to="/signin"
+                      fontFamily="Open Sans sans-serif"
+                      border="2px solid red"
+                      style={({ isActive, isPending }) => {
+                        return {
+                          fontWeight: isActive ? "bold" : "",
+                          color: isPending ? "red" : "black",
+                        };
+                      }}
+                    >
+                      Signin
+                    </NavLink>
+                  )}
                 </Box>
               </DrawerBody>
             </DrawerContent>
